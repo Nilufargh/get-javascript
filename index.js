@@ -1,6 +1,6 @@
-//import express from 'express';
+
 const express = require('express');
-import usersRoutes from './routes/users.js';
+// const router = require('./routes/users.js');
 //import bodyParser from 'body-parser';
 //the whole application lies in 'app' variable
 const app = express();
@@ -11,7 +11,14 @@ const PORT = 5000;
 //?app.use(bodyParser.json()); was not ok?
 app.use(express.json());
 
-app.use('/users', usersRoutes);
+// app.use(express.json());
+
+
+
+require('./routes/users.js')(app)
+require('./routes/users.js')(app)
+require('./routes/users.js')(app)
+require('./routes/users.js')(app)
 //get request 
 //browser can only may get request
 app.get('/', (req,res)=>{res.send('Hello from homepage')});
